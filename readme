@@ -1,0 +1,68 @@
+Descompactar numa diretoria relativa à resolução da primeira série de exercícios.
+Por exemplo:
+
+home
+	aluno
+		psc
+			2223inv
+				serie1
+				serie2
+				serie3
+
+$ cd ~/psc/2223inv/serie1
+$ unzip ~/Downloads/serie1_resolucao.zip
+
+home
+	aluno
+		psc
+			2223inv
+				serie1
+					serie1_resolucao
+						exercicio1
+							build1.sh
+							int_to_string.o
+							int_to_string_test.c
+							int_to_string.c       <-- a realizar pelo aluno
+						exercicio2
+						exercicio3
+						exercicio4
+						exercicio5
+				serie2
+				serie3
+
+Os programas realizados no âmbito de cada exercício devem ser colocados na respetiva diretoria.
+
+Nos exercicios 1 a 4, o nome dos ficheiros devem ser iguais ao nome da função que contêm.
+
+No exercício 5, o nome do ficheiro com o programa deve ser find_and_substitute.c
+
+Nos exercícios 1 a 4, os nomes dos ficheiros com o programa de teste têm a forma xxx_test.c,
+em que xxx corresponde ao nome da função em teste.
+
+Por exemplo, no primeiro exercício, para testar a função int_to_string
+contida no ficheiro int_to_string.c deve fazer-se:
+
+	$ gcc int_to_string_test.c int_to_string.c -o int_to_string_test -g -Wall
+
+	$ ./int_to_string_test
+
+Para verificar o funcionamento do programa de teste
+pode usar-se o binário fornecido com uma implementação da função em causa.
+
+	$ gcc int_to_string_test.c int_to_string.o -o int_to_string_test -g -Wall
+
+	$ ./int_to_string_test
+
+Para gerar os programas executáveis pode utilizar-se o script shell build.sh.
+
+Se após a descompactação, o ficheiro com o script não possuir atributo de executável,
+deve fazer-se:
+
+$ chmod +x build.sh
+
+
+A entrega deve ser realizada no Moodle através da submissão de um pacote zip
+gerado da seguinte forma:
+
+$ cd ~/psc/2223inv/serie1
+$ zip -r serie1_resolucao.zip serie1_resolucao
